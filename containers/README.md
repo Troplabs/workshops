@@ -105,6 +105,10 @@ podman stop mongo && podman rm mongo
 
 ### Dockerfile
 
+**Refs:**
+
+- https://docs.docker.com/engine/reference/builder/
+
 Lets write a simple Dockerfile for go application
 
 ```Dockerfile
