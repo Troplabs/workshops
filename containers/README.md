@@ -3,6 +3,11 @@
 ## Podman
 
 Podman is a tool for running linux containers.
+**Refs:**
+
+- https://podman.io/getting-started/
+- https://docs.podman.io/en/latest/index.html
+- https://docs.podman.io/en/latest/Tutorials.html
 
 ### Installation
 
@@ -141,7 +146,31 @@ podman stop sample && podman rm sample
 
 ## VSCode Remote Containers
 
+**Ref:**
+
+- https://code.visualstudio.com/docs/remote/containers-tutorial
+- https://code.visualstudio.com/docs/remote/containers
+
 ### Prequisites
 
 - Podman
+- [podman-compose](https://github.com/containers/podman-compose)
 - Install [ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+
+## Configuration
+
+### Settings
+
+```jsonc
+{
+  // Add this to vscode settings.json file
+  "remote.containers.dockerPath": "podman",
+  "remote.containers.dockerComposePath": "podman-compose"
+}
+```
+
+### Enable docker socket
+
+```sh
+systemctl --user enable --now podman.socket
+```
